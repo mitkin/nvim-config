@@ -66,6 +66,7 @@ nvim_lsp.gopls.setup {
     end,
 }
 
+nvim_lsp.ansiblels.setup{}
 
 vim.api.nvim_set_keymap('n', '<Leader>gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>gr', '<Cmd>lua vim.lsp.buf.references()<CR>', { noremap = true, silent = true })
