@@ -1,3 +1,5 @@
+vim.o.swapfile = false
+
 vim.bo.expandtab = true
 
 -- Set your leader key to a preferred key (default is '\')
@@ -42,7 +44,7 @@ require('packer').startup(function()
     use 'hrsh7th/nvim-compe'     -- Autocompletion plugin
     use 'nvim-lua/popup.nvim'    -- Dependency for fzf.vim
     use 'nvim-lua/plenary.nvim'  -- Dependency for fzf.vim
-    use 'nvim-treesitter/nvim-treesitter' -- Syntax highlighting
+    -- use 'nvim-treesitter/nvim-treesitter' -- Syntax highlighting
     use 'tpope/vim-fugitive'     -- Git integration
     use 'airblade/vim-gitgutter' -- Git diff in the gutter
     use 'junegunn/fzf'           -- Fuzzy file search
@@ -88,6 +90,16 @@ vim.api.nvim_set_keymap('n', '<Leader>gp', '<Cmd>lua vim.lsp.diagnostic.goto_pre
 local telescope = require('telescope')
 telescope.setup {
     defaults = {
+        vimgrep_arguments = {
+            'rg',
+            '--color=always',
+            '--no-heading',
+            '--with-filename',
+            '--line-number',
+            '--column',
+            '--smart-case',
+            '--hidden',
+        },
         prompt_prefix = ' ',
         selection_caret = ' ',
         mappings = {
