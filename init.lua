@@ -28,6 +28,7 @@ vim.o.clipboard = 'unnamedplus'
 -- Use a dark color scheme (You can replace this with your preferred color scheme)
 vim.cmd('colorscheme habamax')
 
+
 -- Plugin management using Packer.nvim (You can use your preferred plugin manager)
 -- Install Packer.nvim if you haven't already: https://github.com/wbthomason/packer.nvim
 local packer_exists = pcall(vim.cmd, [[packadd packer.nvim]])
@@ -40,6 +41,7 @@ end
 -- Initialize Packer.nvim
 require('packer').startup(function()
     -- Your plugins configuration here
+    use 'github/copilot.vim'
     use 'neovim/nvim-lspconfig'  -- Example LSP configuration
     use 'hrsh7th/nvim-compe'     -- Autocompletion plugin
     use 'nvim-lua/popup.nvim'    -- Dependency for fzf.vim
